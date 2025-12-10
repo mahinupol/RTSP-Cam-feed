@@ -8,7 +8,7 @@ const noiseColors = ['#111', '#1a1a1a', '#0f0f0f'];
 // --- Init ---
 window.addEventListener('DOMContentLoaded', () => {
     // Seed initial cameras
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 1; i++) {
         addCameraState(`Sector ${i + 1}`, `192.168.1.10${i + 1}`, 'SIM');
     }
     renderGrid();
