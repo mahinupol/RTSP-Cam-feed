@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SENTRY :: ADVANCED SURVEILLANCE SYSTEM</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
@@ -16,11 +19,11 @@
             --cyan: #00f5ff;
             --cyan-dim: rgba(0, 245, 255, 0.1);
             --cyan-glow: rgba(0, 245, 255, 0.6);
-            
+
             --purple: #7c3aed;
             --purple-dim: rgba(124, 58, 237, 0.1);
             --purple-glow: rgba(124, 58, 237, 0.5);
-            
+
             --amber: #f59e0b;
             --amber-dim: rgba(245, 158, 11, 0.1);
             --amber-glow: rgba(245, 158, 11, 0.5);
@@ -31,7 +34,7 @@
             --bg-dark: #050508;
             --bg-panel: #0a0a12;
             --grid-line: rgba(255, 255, 255, 0.03);
-            
+
             --font-head: 'Orbitron', sans-serif;
             --font-body: 'Rajdhani', sans-serif;
 
@@ -54,7 +57,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            background: 
+            background:
                 radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(0, 245, 255, 0.05) 0%, transparent 40%),
                 linear-gradient(var(--bg-dark), var(--bg-dark));
@@ -64,8 +67,11 @@
         body::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
                 linear-gradient(var(--grid-line) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
             background-size: 40px 40px;
@@ -78,7 +84,10 @@
             content: " ";
             display: block;
             position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
             z-index: 1000;
             background-size: 100% 2px, 3px 100%;
@@ -97,7 +106,7 @@
             background: rgba(10, 10, 18, 0.8);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--grid-line);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
 
         .brand {
@@ -116,8 +125,17 @@
         }
 
         @keyframes pulse-logo {
-            0%, 100% { box-shadow: 0 0 15px var(--cyan-glow); opacity: 1; }
-            50% { box-shadow: 0 0 30px var(--cyan-glow); opacity: 0.8; }
+
+            0%,
+            100% {
+                box-shadow: 0 0 15px var(--cyan-glow);
+                opacity: 1;
+            }
+
+            50% {
+                box-shadow: 0 0 30px var(--cyan-glow);
+                opacity: 0.8;
+            }
         }
 
         h1 {
@@ -186,6 +204,7 @@
             border-color: var(--red);
             color: var(--red);
         }
+
         button.danger:hover {
             background: var(--red);
             color: #fff;
@@ -199,7 +218,7 @@
             overflow-y: auto;
             position: relative;
             z-index: 1;
-            
+
             display: grid;
             gap: 1rem;
             /* Grid template is set via JS */
@@ -225,22 +244,28 @@
         }
 
         /* Decoration corners */
-        .cam-card::before, .cam-card::after {
+        .cam-card::before,
+        .cam-card::after {
             content: '';
             position: absolute;
-            width: 10px; height: 10px;
+            width: 10px;
+            height: 10px;
             border: 2px solid transparent;
             transition: all 0.3s;
             pointer-events: none;
             z-index: 10;
         }
+
         .cam-card:hover::before {
-            top: 0; left: 0;
+            top: 0;
+            left: 0;
             border-top-color: var(--cyan);
             border-left-color: var(--cyan);
         }
+
         .cam-card:hover::after {
-            bottom: 0; right: 0;
+            bottom: 0;
+            right: 0;
             border-bottom-color: var(--cyan);
             border-right-color: var(--cyan);
         }
@@ -251,8 +276,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0,0,0,0.4);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 0.9rem;
         }
 
@@ -261,7 +286,7 @@
             font-weight: 600;
             letter-spacing: 1px;
         }
-        
+
         .cam-ip {
             color: #666;
             font-family: monospace;
@@ -270,11 +295,12 @@
         }
 
         .cam-status {
-            width: 8px; height: 8px;
+            width: 8px;
+            height: 8px;
             background: #333;
             border-radius: 50%;
             display: inline-block;
-            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         }
 
         .cam-status.online {
@@ -287,7 +313,8 @@
             flex: 1;
             background: #000;
             position: relative;
-            min-height: 200px; /* Base height */
+            min-height: 200px;
+            /* Base height */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -315,7 +342,7 @@
         /* Overlays */
         .feed-overlay {
             position: absolute;
-            top: 1rem; 
+            top: 1rem;
             left: 1rem;
             display: flex;
             gap: 0.5rem;
@@ -329,13 +356,19 @@
             font-size: 0.7rem;
             font-weight: 700;
             border-radius: 2px;
-            display: none; /* hidden by default */
+            display: none;
+            /* hidden by default */
             animation: flash 1s infinite alternate;
         }
 
         @keyframes flash {
-            from { opacity: 1; }
-            to { opacity: 0.3; }
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0.3;
+            }
         }
 
         .timestamp {
@@ -344,7 +377,7 @@
             right: 1rem;
             font-family: monospace;
             z-index: 5;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0, 0, 0, 0.6);
             padding: 2px 5px;
             font-size: 0.85rem;
             color: #ddd;
@@ -353,31 +386,51 @@
         /* Scanning Line Animation on Feed */
         .scan-line {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 5px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
             background: rgba(0, 245, 255, 0.3);
             box-shadow: 0 0 10px var(--cyan);
             opacity: 0.3;
             animation: scan 4s linear infinite;
             pointer-events: none;
             z-index: 4;
-            display: none; /* Only Show on hover or active */
+            display: none;
+            /* Only Show on hover or active */
         }
+
         .cam-card:hover .scan-line {
             display: block;
         }
 
         @keyframes scan {
-            0% { top: -10%; opacity: 0; }
-            5% { opacity: 0.3; }
-            95% { opacity: 0.3; }
-            100% { top: 110%; opacity: 0; }
+            0% {
+                top: -10%;
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 0.3;
+            }
+
+            95% {
+                opacity: 0.3;
+            }
+
+            100% {
+                top: 110%;
+                opacity: 0;
+            }
         }
 
         /* Controls Overlay (Slide up on hover) */
         .feed-controls {
             position: absolute;
-            bottom: 0; left: 0; width: 100%;
-            background: rgba(0,0,0,0.8);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
             padding: 0.5rem;
             display: flex;
             justify-content: center;
@@ -386,6 +439,7 @@
             transition: transform 0.3s var(--ease-out);
             z-index: 10;
         }
+
         .cam-card:hover .feed-controls {
             transform: translateY(0);
         }
@@ -399,11 +453,13 @@
             opacity: 0.7;
             transition: 0.2s;
         }
+
         .icon-btn:hover {
             opacity: 1;
             color: var(--cyan);
             transform: scale(1.1);
         }
+
         .icon-btn.active-rec {
             color: var(--red);
             opacity: 1;
@@ -413,8 +469,11 @@
         /* --- Modals --- */
         .modal-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
             z-index: 2000;
             display: none;
@@ -423,7 +482,7 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
-        
+
         .modal-overlay.open {
             display: flex;
             opacity: 1;
@@ -436,10 +495,11 @@
             width: 90%;
             max-width: 500px;
             padding: 2rem;
-            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
             transform: scale(0.9);
             transition: transform 0.3s var(--ease-out);
         }
+
         .modal-overlay.open .modal {
             transform: scale(1);
         }
@@ -452,7 +512,7 @@
             border-bottom: 1px solid var(--grid-line);
             padding-bottom: 1rem;
         }
-        
+
         .modal-title {
             font-family: var(--font-head);
             font-size: 1.2rem;
@@ -466,30 +526,35 @@
             cursor: pointer;
             font-size: 1.5rem;
         }
-        .close-btn:hover { color: #fff; }
+
+        .close-btn:hover {
+            color: #fff;
+        }
 
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
+
         label {
             display: block;
             margin-bottom: 0.5rem;
             color: #888;
             font-size: 0.9rem;
         }
-        
-        input[type="text"], select {
+
+        input[type="text"],
+        select {
             width: 100%;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid #333;
             padding: 0.8rem;
             color: #fff;
             font-family: var(--font-body);
             border-radius: 4px;
         }
-        
-        input[type="text"]:focus, select:focus {
+
+        input[type="text"]:focus,
+        select:focus {
             outline: none;
             border-color: var(--cyan);
             box-shadow: 0 0 10px var(--cyan-dim);
@@ -500,7 +565,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.8rem;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             margin-bottom: 0.5rem;
             border-radius: 4px;
         }
@@ -515,16 +580,19 @@
             background: #000;
             border: 1px solid var(--cyan);
         }
+
         #fullscreen-modal .modal-header {
             padding: 1rem;
             margin: 0;
             background: #111;
         }
+
         #fullscreen-feed-container {
             flex: 1;
             position: relative;
             background: #000;
         }
+
         #fullscreen-feed-canvas {
             width: 100%;
             height: 100%;
@@ -536,19 +604,22 @@
             width: 6px;
             height: 6px;
         }
+
         ::-webkit-scrollbar-track {
-            background: var(--bg-dark); 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--cyan); 
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #fff; 
+            background: var(--bg-dark);
         }
 
+        ::-webkit-scrollbar-thumb {
+            background: var(--cyan);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fff;
+        }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -561,9 +632,9 @@
             <div class="stat-badge">
                 CAMERAS: <span id="active-cams-count" style="color: var(--cyan); font-weight: bold;">0</span>
             </div>
-            
+
             <div class="clock-container" id="main-clock">00:00:00</div>
-            
+
             <button onclick="openModal('add-cam-modal')">
                 <span>+ ADD CAM</span>
             </button>
@@ -578,7 +649,7 @@
     </main>
 
     <!-- Modals -->
-    
+
     <!-- Add Camera Modal -->
     <div id="add-cam-modal" class="modal-overlay">
         <div class="modal">
@@ -591,8 +662,19 @@
                 <input type="text" id="new-cam-name" placeholder="e.g. Sector 7 Hallway">
             </div>
             <div class="form-group">
-                <label>RTSP STREAM URL</label>
-                <input type="text" id="new-cam-url" placeholder="rtsp://192.168.1.xxx:554/stream">
+                <label>FEED TYPE</label>
+                <select id="new-cam-type" onchange="toggleUrlPlaceholder()">
+                    <option value="SIM">SIMULATION (Demo)</option>
+                    <option value="MJPEG">MJPEG (Http Stream - Fast)</option>
+                    <option value="WEBRTC">WEBRTC / HLS (Video Stream)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>STREAM URL / IP</label>
+                <input type="text" id="new-cam-url" placeholder="Enter IP or Full URL">
+                <div style="font-size: 0.7rem; color: #666; margin-top: 5px;" id="url-hint">
+                    For Demo, leave blank.
+                </div>
             </div>
             <div style="display: flex; gap: 1rem; justify-content: flex-end;">
                 <button class="danger" onclick="closeModal('add-cam-modal')">CANCEL</button>
@@ -637,7 +719,7 @@
                 <button class="close-btn" onclick="closeModal('fullscreen-modal')">&times;</button>
             </div>
             <div id="fullscreen-feed-container">
-                <canvas id="fullscreen-feed-canvas"></canvas>
+                <!-- Content injected dynamically -->
                 <div class="timestamp" id="fs-timestamp" style="font-size: 1.2rem;"></div>
             </div>
         </div>
@@ -647,15 +729,15 @@
         // --- State ---
         let cameras = [];
         let nextId = 1;
-        
-        // Simulation Assets (colors for noise generation)
+
+        // Simulation Assets
         const noiseColors = ['#111', '#1a1a1a', '#0f0f0f'];
 
         // --- Init ---
         window.addEventListener('DOMContentLoaded', () => {
-            // Seed initial cameras
-            for(let i=0; i<4; i++) {
-                addCameraState(`Sector ${i+1}`, `192.168.1.10${i+1}`);
+            // Seed initial cameras (Simulated)
+            for (let i = 0; i < 4; i++) {
+                addCameraState(`Sector ${i + 1}`, `192.168.1.10${i + 1}`, 'SIM');
             }
             renderGrid();
             startClocks();
@@ -664,11 +746,24 @@
 
         // --- Core Functions ---
 
-        function addCameraState(name, ip) {
+        function addCameraState(name, url, type = 'SIM') {
+            // Parse IP for display
+            let ip = 'Unknown';
+            if (type === 'SIM') ip = url || `192.168.1.${100 + nextId}`;
+            else if (url) {
+                try {
+                    // Try to extract IP/Host from URL
+                    const urlObj = new URL(url.startsWith('http') ? url : 'http://' + url);
+                    ip = urlObj.hostname;
+                } catch (e) { ip = url; }
+            }
+
             cameras.push({
                 id: nextId++,
                 name: name || `Camera ${nextId}`,
-                ip: ip || `192.168.1.${100+nextId}`,
+                ip: ip,
+                url: url,
+                type: type, // 'SIM', 'MJPEG', 'WEBRTC'
                 isRecording: false,
                 active: true,
                 noiseOffset: Math.random() * 1000
@@ -676,21 +771,33 @@
             updateHeaderCounts();
         }
 
+        function toggleUrlPlaceholder() {
+            const type = document.getElementById('new-cam-type').value;
+            const input = document.getElementById('new-cam-url');
+            const hint = document.getElementById('url-hint');
+
+            if (type === 'MJPEG') {
+                input.placeholder = 'http://192.168.1.X:8080/video';
+                hint.innerText = 'Direct stream URL (mjpeg/jpg) for 0 Latency.';
+            } else if (type === 'WEBRTC') {
+                input.placeholder = 'http://192.168.1.X:8888/stream';
+                hint.innerText = 'WebRTC or HLS Stream URL.';
+            } else {
+                input.placeholder = 'Optional IP Address';
+                hint.innerText = 'Auto-generated visual noise.';
+            }
+        }
+
         function addNewCamera() {
             const nameIn = document.getElementById('new-cam-name');
+            const typeIn = document.getElementById('new-cam-type');
             const urlIn = document.getElementById('new-cam-url');
-            
-            // Extract IP from URL if possible, primitive parsing
-            let ip = 'Unknown IP';
-            if(urlIn.value.includes('//')) {
-                ip = urlIn.value.split('/')[2].split(':')[0];
-            }
 
-            addCameraState(nameIn.value, ip);
+            addCameraState(nameIn.value, urlIn.value, typeIn.value);
             renderGrid();
             closeModal('add-cam-modal');
-            
-            // Reset inputs
+
+            // Reset
             nameIn.value = '';
             urlIn.value = '';
         }
@@ -699,12 +806,12 @@
             cameras = cameras.filter(c => c.id !== id);
             renderGrid();
             updateHeaderCounts();
-            renderSettingsList(); // refresh if open
+            renderSettingsList();
         }
 
         function toggleCamera(id) {
             const cam = cameras.find(c => c.id === id);
-            if(cam) {
+            if (cam) {
                 cam.active = !cam.active;
                 renderGrid();
                 updateHeaderCounts();
@@ -720,45 +827,54 @@
         function renderGrid() {
             const grid = document.getElementById('camera-grid');
             grid.innerHTML = '';
-            
+
             const activeCams = cameras.filter(c => c.active);
             const count = activeCams.length;
 
-            // Auto Layout Logic
+            // Auto Layout
             let columns = 'repeat(auto-fit, minmax(300px, 1fr))';
-            
             const mode = document.getElementById('layout-mode').value;
             if (mode === 'auto') {
-                if(count === 1) columns = '1fr';
-                else if(count === 2) columns = '1fr 1fr';
-                else if(count <= 4) columns = '1fr 1fr'; // 2x2
-                else if(count <= 6) columns = 'repeat(3, 1fr)';
+                if (count === 1) columns = '1fr';
+                else if (count === 2) columns = '1fr 1fr';
+                else if (count <= 4) columns = '1fr 1fr';
+                else if (count <= 6) columns = 'repeat(3, 1fr)';
                 else columns = 'repeat(4, 1fr)';
-            } else if (mode === '2col') {
-                columns = '1fr 1fr';
-            } else if (mode === '3col') {
-                columns = 'repeat(3, 1fr)';
-            } else if (mode === '4col') {
-                columns = 'repeat(4, 1fr)';
-            }
+            } else if (mode === '2col') columns = '1fr 1fr';
+            else if (mode === '3col') columns = 'repeat(3, 1fr)';
+            else if (mode === '4col') columns = 'repeat(4, 1fr)';
 
             grid.style.gridTemplateColumns = columns;
 
-            // Render Cards
             activeCams.forEach(cam => {
                 const card = document.createElement('div');
                 card.className = 'cam-card';
+
+                // Content Generator based on Type
+                let feedContent = '';
+                if (cam.type === 'SIM') {
+                    feedContent = `<canvas class="feed-canvas" id="canvas-${cam.id}"></canvas>`;
+                } else if (cam.type === 'MJPEG') {
+                    // MJPEG is just an IMG tag that reloads effectively
+                    feedContent = `<img src="${cam.url}" class="feed-canvas" alt="NO SIGNAL" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                                   <div class="no-signal-text" style="display:none; color:red;">COORD LOST</div>`;
+                } else if (cam.type === 'WEBRTC') {
+                    // Generic Video tag setup
+                    feedContent = `<video src="${cam.url}" class="feed-canvas" autoplay playsinline muted loop onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"></video>
+                                   <div class="no-signal-text" style="display:none; color:red;">STREAM ERROR</div>`;
+                }
+
                 card.innerHTML = `
                     <div class="cam-header">
                         <div>
                             <span class="cam-status online"></span>
                             <span class="cam-title">${cam.name}</span>
-                            <span class="cam-ip">[${cam.ip}]</span>
+                            <span class="cam-ip">[${cam.ip}::${cam.type}]</span>
                         </div>
                         <div style="font-size: 0.8em; color: #444;">LIVE</div>
                     </div>
                     <div class="cam-feed" id="feed-container-${cam.id}">
-                        <canvas class="feed-canvas" id="canvas-${cam.id}"></canvas>
+                        ${feedContent}
                         <div class="scan-line"></div>
                         <div class="feed-overlay">
                             <div class="rec-badge" id="rec-badge-${cam.id}" style="display: ${cam.isRecording ? 'block' : 'none'}">REC</div>
@@ -777,87 +893,78 @@
             });
         }
 
-        function updateLayout() {
-            renderGrid();
-        }
+        function updateLayout() { renderGrid(); }
 
-        // --- Canvas Animation (Simulated Feed) ---
+        // --- Animation Loop (For Sim Only) ---
         function animationLoop() {
-            const activeCams = cameras.filter(c => c.active);
-            
-            // Main Grid
-            activeCams.forEach(cam => {
+            // Only draw canvases (SIM type)
+            const videoCams = cameras.filter(c => c.active && c.type === 'SIM');
+
+            videoCams.forEach(cam => {
                 const canvas = document.getElementById(`canvas-${cam.id}`);
-                if(canvas) drawNoise(canvas, cam);
+                if (canvas) drawNoise(canvas, cam);
             });
 
-            // Fullscreen
-            if(currentFullscreenId) {
+            // Fullscreen Sim
+            if (currentFullscreenId) {
                 const cam = cameras.find(c => c.id === currentFullscreenId);
-                const fsCanvas = document.getElementById('fullscreen-feed-canvas');
-                if(cam && fsCanvas) drawNoise(fsCanvas, cam, true);
+                if (cam && cam.type === 'SIM') {
+                    const fsCanvas = document.getElementById('fullscreen-canvas-render');
+                    if (fsCanvas) drawNoise(fsCanvas, cam, true);
+                }
             }
 
             requestAnimationFrame(animationLoop);
         }
 
         function drawNoise(canvas, cam, highQuality = false) {
-            const ctx = canvas.getContext('2d');
-            
-            // Resize if needed
+            const ctx = canvas.getContext('2d', { alpha: false }); // Optimize
+
             const rect = canvas.parentElement.getBoundingClientRect();
-            if(canvas.width !== rect.width || canvas.height !== rect.height) {
+            if (canvas.width !== rect.width || canvas.height !== rect.height) {
                 canvas.width = rect.width;
                 canvas.height = rect.height;
             }
 
             const w = canvas.width;
             const h = canvas.height;
-            
-            // Fill Background
+
             ctx.fillStyle = '#050505';
             ctx.fillRect(0, 0, w, h);
 
-            // Draw "Video" Elements (Moving shapes to simulate activity)
-            const time = Date.now() * 0.001;
-            
-            // 1. Grid
+            // Grid
             ctx.strokeStyle = '#112';
             ctx.lineWidth = 1;
             ctx.beginPath();
-            for(let x=0; x<w; x+=50) { ctx.moveTo(x,0); ctx.lineTo(x,h); }
-            for(let y=0; y<h; y+=50) { ctx.moveTo(0,y); ctx.lineTo(w,y); }
+            for (let x = 0; x < w; x += 50) { ctx.moveTo(x, 0); ctx.lineTo(x, h); }
+            for (let y = 0; y < h; y += 50) { ctx.moveTo(0, y); ctx.lineTo(w, y); }
             ctx.stroke();
 
-            // 2. Moving Object (Simulate camera movement/subject)
-            const xPos = (Math.sin(time + cam.id) * w/3) + w/2;
-            const yPos = (Math.cos(time * 0.8 + cam.id) * h/3) + h/2;
-            
+            // Mover
+            const time = Date.now() * 0.001;
+            const xPos = (Math.sin(time + cam.id) * w / 3) + w / 2;
+            const yPos = (Math.cos(time * 0.8 + cam.id) * h / 3) + h / 2;
+
             ctx.fillStyle = '#111';
             ctx.beginPath();
-            ctx.arc(xPos, yPos, 40, 0, Math.PI*2);
+            ctx.arc(xPos, yPos, 40, 0, Math.PI * 2);
             ctx.fill();
 
-            // 3. Noise / Grain
-            // Optimization: Only update noise every few frames or use smaller pattern
-            const imageData = ctx.getImageData(0,0,w,h);
+            // Noise
+            const imageData = ctx.getImageData(0, 0, w, h);
             const data = imageData.data;
-            
-            // Super basic noise for "Signal" look
-            // We'll just touch random pixels to be faster than iterating all
-            for(let i=0; i< (highQuality ? 4000 : 1000); i++) {
+            const limit = highQuality ? 4000 : 1000;
+
+            for (let i = 0; i < limit; i++) {
                 const x = Math.floor(Math.random() * w);
                 const y = Math.floor(Math.random() * h);
                 const index = (y * w + x) * 4;
                 const val = Math.random() * 50;
-                data[index] = Math.min(255, data[index] + val);     // r
-                data[index+1] = Math.min(255, data[index+1] + val); // g
-                data[index+2] = Math.min(255, data[index+2] + val); // b
+                data[index] += val;
+                data[index + 1] += val;
+                data[index + 2] += val;
             }
             ctx.putImageData(imageData, 0, 0);
-
-            // 4. Time Overlay (embedded in canvas for realism?) 
-            // - Actually we use DOM overlay for crisp text, so skip here.
         }
 
 
@@ -865,9 +972,12 @@
 
         function toggleRec(id) {
             const cam = cameras.find(c => c.id === id);
-            if(cam) {
+            if (cam) {
                 cam.isRecording = !cam.isRecording;
-                renderGrid(); // brute force re-render to update UI state
+                // Optimization: Don't re-render whole grid for just a badge
+                const badge = document.getElementById(`rec-badge-${id}`);
+                const btn = document.querySelector(`#feed-container-${id} .active-rec`); // getting complex, re-render is safer for single file
+                renderGrid();
             }
         }
 
@@ -876,26 +986,37 @@
         function openFullscreen(id) {
             currentFullscreenId = id;
             const cam = cameras.find(c => c.id === id);
-            document.getElementById('fs-title').innerText = cam.name + " [LIVE FEED]";
+            document.getElementById('fs-title').innerText = cam.name + " [FULL FEED]";
+
+            const container = document.getElementById('fullscreen-feed-container');
+            // Remove old content but keep timestamp
+            const ts = document.getElementById('fs-timestamp');
+            container.innerHTML = '';
+
+            // Inject correct full player
+            if (cam.type === 'SIM') {
+                container.innerHTML = '<canvas id="fullscreen-canvas-render" style="width:100%; height:100%; object-fit:contain;"></canvas>';
+            } else if (cam.type === 'MJPEG') {
+                container.innerHTML = `<img src="${cam.url}" style="width:100%; height:100%; object-fit:contain;">`;
+            } else {
+                container.innerHTML = `<video src="${cam.url}" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:contain;"></video>`;
+            }
+            container.appendChild(ts);
+
             openModal('fullscreen-modal');
         }
 
-        function openSettings(id) {
-            // Helper to scroll settings info for specific cam?
-            // For now just general settings
-            openModal('settings-modal');
-        }
+        function openSettings(id) { openModal('settings-modal'); }
 
         // --- Modals ---
-        
         function openModal(id) {
             document.getElementById(id).classList.add('open');
-            if(id === 'settings-modal') renderSettingsList();
+            if (id === 'settings-modal') renderSettingsList();
         }
 
         function closeModal(id) {
             document.getElementById(id).classList.remove('open');
-            if(id === 'fullscreen-modal') currentFullscreenId = null;
+            if (id === 'fullscreen-modal') currentFullscreenId = null;
         }
 
         function renderSettingsList() {
@@ -905,7 +1026,7 @@
                 const item = document.createElement('div');
                 item.className = 'camera-list-item';
                 item.innerHTML = `
-                    <span>${cam.name}</span>
+                    <span>${cam.name} <small style="color:#666">(${cam.type})</small></span>
                     <div>
                         <button style="border:none; color: ${cam.active ? 'var(--cyan)' : '#444'};" onclick="toggleCamera(${cam.id})">
                             ${cam.active ? 'ON' : 'OFF'}
@@ -917,20 +1038,16 @@
             });
         }
 
-        // Click outside to close
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target.classList.contains('modal-overlay')) {
                 event.target.classList.remove('open');
-                if(event.target.id === 'fullscreen-modal') currentFullscreenId = null;
+                if (event.target.id === 'fullscreen-modal') currentFullscreenId = null;
             }
         }
 
-        // Escape key
-        window.onkeydown = function(e) {
-            if(e.key === "Escape") {
-                document.querySelectorAll('.modal-overlay').forEach(m => {
-                    m.classList.remove('open');
-                });
+        window.onkeydown = function (e) {
+            if (e.key === "Escape") {
+                document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('open'));
                 currentFullscreenId = null;
             }
         }
@@ -939,27 +1056,23 @@
         function startClocks() {
             setInterval(() => {
                 const now = new Date();
-                const timeStr = now.toLocaleTimeString('en-US', {hour12: false});
+                const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
                 const ms = String(now.getMilliseconds()).padStart(3, '0');
-                
-                // Main Clock
-                document.getElementById('main-clock').innerText = `${timeStr}`; // .${ms.substring(0,2)}
 
-                // Cam Clocks
+                document.getElementById('main-clock').innerText = `${timeStr}`;
                 cameras.forEach(cam => {
                     const el = document.getElementById(`time-${cam.id}`);
-                    if(el) el.innerText = `${timeStr}.${ms}`; // High precision for cameras
+                    if (el) el.innerText = `${timeStr}.${ms}`;
                 });
-                
-                // FS Clock
-                if(currentFullscreenId) {
-                    const el = document.getElementById('fs-timestamp');
-                    if(el) el.innerText = `${timeStr}.${ms}`;
-                }
 
-            }, 40); // 25fps update for clock
+                if (currentFullscreenId) {
+                    const el = document.getElementById('fs-timestamp');
+                    if (el) el.innerText = `${timeStr}.${ms}`;
+                }
+            }, 40);
         }
 
     </script>
 </body>
+
 </html>
